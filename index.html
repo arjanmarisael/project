@@ -1,0 +1,50 @@
+<html>
+
+<head>
+
+<title>9/11 Data visualisation</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.vegas.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+<![endif]-->
+
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="js/jquery.vegas.min.js"></script>
+<script src="js/intro.js"></script>
+<script src="js/map.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+<div id="intro">
+	<div id="titel" class="intro">9 September 2001</div>
+	<div id="intro1" class="intro">At 8:46 flight 11 crashes into the north Tower 
+	<span id="bold">1,355</span> people died</div>
+	<div id="intro2" class="intro">At 9:03 flight 175 crashes into the South Tower <span id="bold">600</span> people died. </div>
+	<div id="intro3" class="intro"><span id="bold">434</span> firefighters were killed in action. They entered the towers to rescue the people who were trapped inside, not knowing the towers would collapse.</div>
+	<div id="skip">&#65515;</div>
+</div>
+<div id="site">
+	<div id="header" class="block">The heroes of 9/11</div>
+	<div id="map" class="block leaflet-container leaflet-fade-anim" ></div>
+	<div id="victims" class="block"></div>
+	<div id="stats" class="block"></div>
+	<div id="location" class="block"></div>
+	<div id="audio" class="block"></div>
+</div>
+
+</div>
+</body>
+<script>
+$("#skip").click(function() {
+	slider();
+	$("#site").fadeIn(3000);
+	$("audio").remove();
+    $("#intro").remove();
+	addMap();
+});
+</script>
+</html>
